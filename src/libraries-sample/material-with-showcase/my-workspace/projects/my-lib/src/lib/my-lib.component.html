@@ -1,0 +1,77 @@
+<div class = "row cal-nav">
+  <mat-grid-list cols="8" rowHeight="30px">
+      <mat-grid-tile [style.background]="'white'" [colspan] = "'2'" >{{this.startDate.format('MMMM YYYY')}} - {{this.lastDate.format('MMMM YYYY')}}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Today </mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Day </mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Work Week </mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'"><p style="color:rgb(85, 88, 235);">Week</p></mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Month </mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'" (click)="currentWeek()">Dashboard </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
+<div class = "row week-nav">
+  <span class="material-icons" (click)="previousWeek()">chevron_left</span>
+  <span class="material-icons" (click) ="nextWeek()">chevron_right</span>
+</div>
+<div class = "container">
+<div class = "row row-date">
+  <mat-grid-list cols="7" rowHeight="50px">
+      <mat-grid-tile [style.background]="'white'">Sunday {{ this.startDate.format('l') }}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Monday {{ this.secondDate.format('l') }}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Tuesday {{this.thirdDate.format('l')}}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Wednesday {{this.fourthDate.format('l')}}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Thursday {{this.fifthDate.format('l')}}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Friday {{this.sixthDate.format('l')}}</mat-grid-tile>
+      <mat-grid-tile [style.background]="'white'">Saturday {{this.lastDate.format('l')}}</mat-grid-tile>
+  </mat-grid-list>
+</div>
+<br>
+<div class = "row row-problem">
+  <mat-grid-list cols="7" rowHeight="1:1"[gutterSize]="'20px'">
+      <mat-grid-tile>1 <br/>Pending Problem Review</mat-grid-tile>
+      <mat-grid-tile>2 <br/>Pending Problem Review</mat-grid-tile>
+      <mat-grid-tile>3 <br/>Pending Problem Review</mat-grid-tile>
+      <mat-grid-tile>4 <br/>Pending Problem Review</mat-grid-tile>
+      <mat-grid-tile>5 <br/>Pending Problem Review</mat-grid-tile>
+      <mat-grid-tile>6 <br/>Pending Problem Review</mat-grid-tile>
+      <mat-grid-tile>7 <br/>Pending Problem Review</mat-grid-tile>
+  </mat-grid-list>
+</div>
+<br>
+<div class = "row row-hcc">
+  <mat-grid-list cols="7" rowHeight="1:1" [gutterSize]="'20px'">
+      <mat-grid-tile>1 <br/>Pending HCC Review</mat-grid-tile>
+      <mat-grid-tile>2 <br/>Pending HCC Review</mat-grid-tile>
+      <mat-grid-tile>3 <br/>Pending HCC Review</mat-grid-tile>
+      <mat-grid-tile>4 <br/>Pending HCC Review</mat-grid-tile>
+      <mat-grid-tile>5 <br/>Pending HCC Review</mat-grid-tile>
+      <mat-grid-tile>6 <br/>Pending HCC Review</mat-grid-tile>
+      <mat-grid-tile>7 <br/>Pending HCC Review</mat-grid-tile>
+  </mat-grid-list>
+</div>
+<br>
+<div class = "row row-queries">
+  <mat-grid-list cols="7" rowHeight="1:1"[gutterSize]="'20px'">
+      <mat-grid-tile>1 <br/>Pending Queries</mat-grid-tile>
+      <mat-grid-tile>2 <br/>Pending Queries</mat-grid-tile>
+      <mat-grid-tile>3 <br/>Pending Queries</mat-grid-tile>
+      <mat-grid-tile>4 <br/>Pending Queries</mat-grid-tile>
+      <mat-grid-tile>5 <br/>Pending Queries</mat-grid-tile>
+      <mat-grid-tile>6 <br/>Pending Queries</mat-grid-tile>
+      <mat-grid-tile>7 <br/>Pending Queries</mat-grid-tile>
+  </mat-grid-list>
+</div>
+<br>
+<div class = "row row-uncaptured">
+  <mat-grid-list cols="7" rowHeight="1:1" [gutterSize]="'20px'">
+      <mat-grid-tile [style.background]="'#EC7063'">1 <br/> Uncaptured HCCs</mat-grid-tile>
+      <mat-grid-tile [style.background]="'#EC7063'">2 <br/>Uncaptured HCCs</mat-grid-tile>
+      <mat-grid-tile [style.background]="'#EC7063'">3 <br/>Uncaptured HCCs</mat-grid-tile>
+      <mat-grid-tile [style.background]="'#EC7063'">4 <br/>Uncaptured HCCs</mat-grid-tile>
+      <mat-grid-tile [style.background]="'#EC7063'">5 <br/>Uncaptured HCCs</mat-grid-tile>
+      <mat-grid-tile [style.background]="'#EC7063'">6 <br/>Uncaptured HCCs</mat-grid-tile>
+      <mat-grid-tile [style.background]="'#EC7063'" >7 <br/>Uncaptured HCCs</mat-grid-tile>
+  </mat-grid-list>
+</div>
+</div>
