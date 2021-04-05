@@ -1,1 +1,137 @@
 /* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+
+// For more information: https://material.angular.io/guide/theming
+
+@import "~@angular/material/theming";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include variable for our custom color palette
+// @import "./variables";
+@import "custom-theme.scss";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+/* Search patient component */
+.mat-form-field-wrapper {
+  padding: 0;
+}
+
+.mat-drawer-content {
+  // TODO: need this for query builder component but may need this for other things
+  overflow: hidden !important;
+}
+
+// TODO: Should do our own mixins for our own components
+//       See https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
+
+// Another work-around - https://github.com/angular/material2/issues/13084
+
+// This is for the active list item
+.list-item-active {
+  font-weight: bold;
+  background-color: $cds-active-list-item-color !important;
+  color: $primary !important;
+}
+
+// This is for just hovering
+// https://github.com/angular/material2/blob/master/src/lib/list/_list-theme.scss
+.mat-list-option,
+.mat-nav-list .mat-list-item {
+  &:hover, &:focus {
+    background: $cds-active-list-item-color;
+    color: $primary;
+  }
+}
+
+.mat-expansion-panel {
+  background-color: $accent;
+
+  .mat-expansion-panel-body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.mat-list-item.list-item-active,
+.mat-list-item.list-item-active :hover {
+  .mat-list-item-content, .mat-line {
+    color: $primary;
+  }
+
+  color: $primary;
+}
+
+.mat-expansion-panel-header,
+.mat-expansion-panel-header ::after,
+.mat-expansion-panel-header.mat-expanded,
+.mat-expansion-panel-header.mat-expanded ::after,
+.mat-line,
+.mat-list-item-content
+{
+  color: white;
+}
+
+// cant say I like this.  I think there should be another way
+.white-color
+{
+  color: white !important;
+}
+
+.mat-primary-icon {
+  color: $primary;
+}
+
+.mat-accent-icon {
+  color: $accent;
+}
+
+// This was the only way i coudl figure out how to apply the css changes
+// to the pop up menu.
+.mat-menu-panel.indent-popup  {
+  position:absolute;
+  margin-left:65px !important; // The % allows it to adjust location of the menu while keeping the positioning constant
+  background-color: $accent;
+  color: white;
+}
+
+
+.hideme {
+  display: none !important;
+}
+
+
+// ngx daterangepicker
+.md-drppicker .btn {
+  background-color: $primary !important;
+  color: white !important;
+}
+
+.md-drppicker td.active, .md-drppicker td.active:hover {
+  background-color: $primary !important;
+}
+
+.md-drppicker.double {
+  width: 575px !important;
+}
+
+.mat-dialog-container {
+  overflow: visible !important;
+}
+
+.review-dialog-container .mat-dialog-container {
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #deddd8;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

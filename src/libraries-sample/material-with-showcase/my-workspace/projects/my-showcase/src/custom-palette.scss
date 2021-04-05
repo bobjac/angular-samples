@@ -1,0 +1,75 @@
+
+$md-cworange: (
+  50 : #fdeee8,
+  100 : #fad4c5,
+  200 : #f7b89e,
+  300 : #f39c77,
+  400 : #f1865a,
+  500 : #ee713d,
+  600 : #ec6937,
+  700 : #e95e2f,
+  800 : #e75427,
+  900 : #e2421a,
+  A100 : #ffffff,
+  A200 : #ffe7e2,
+  A400 : #ffbdaf,
+  A700 : #ffa896,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$md-cwblue: (
+  50 : #e8f1f7,
+  100 : #c5dbea,
+  200 : #9fc3dc,
+  300 : #78abce,
+  400 : #5b99c4,
+  500 : #3e87b9,
+  600 : #387fb2,
+  700 : #3074aa,
+  800 : #286aa2,
+  900 : #1b5793,
+  A100 : #cbe4ff,
+  A200 : #98c9ff,
+  A400 : #65aeff,
+  A700 : #4ca0ff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$cds-app-primary: mat-palette($md-cworange, 500);
+$cds-app-accent:  mat-palette($md-cwblue, 500, 200, 900);
+$cds-app-warn:    mat-palette($mat-red);
+
+$primary: mat-color($cds-app-primary);
+$accent: mat-color($cds-app-accent);
+$warn: mat-color($cds-app-warn);
+$cds-active-list-item-color: mat-color($cds-app-accent, darker);

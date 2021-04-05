@@ -1,0 +1,70 @@
+@import "src/styles.scss";
+
+// .example-icon {
+//   /*padding: 0 14px;*/
+// }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-content {
+  // Hack work-around to push content down from top so it wasn't obscured by topNav ... could have something to do with absolute positioning of container below????
+  margin-top: 15px;
+  margin-left: 0px !important;
+  position: absolute;
+  padding-left: 0px;
+ // width: 88%;
+  height: 100%;
+
+}
+
+.sidenav-collapse {
+//  width: 100%;
+  text-align: end;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0px;
+}
+
+.mat-icon .mat-list-icon, .white-colored, .mat-menu-item, .mat-icon-no-color {
+  color: white;
+}
+
+.sidenav-container {
+  display: block;
+  // flex-direction: column;
+  padding-top: 48px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ // width: 100%;
+}
+
+.sidebar-expanded {
+  background-color: $accent;
+  height: 100%;
+ // max-width: 215px;
+}
+
+.sidebar-collapsed {
+  background-color: $accent;
+  height: 100%;
+  width: 65px;
+
+  button{
+    background-color:$accent;
+  }
+}
+
+.shift-right {
+  margin-left: 5px;
+}
+
+.pull-right {
+  margin-left: 16px;
+  margin-top: 5px;
+}

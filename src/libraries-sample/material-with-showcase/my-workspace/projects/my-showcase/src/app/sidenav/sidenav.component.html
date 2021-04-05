@@ -1,0 +1,68 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <mat-list>
+      <div>
+        <button mat-icon-button (click)="isExpanded = !isExpanded" class="sidenav-collapse">
+          <mat-icon *ngIf="isExpanded">chevron_left</mat-icon>
+          <mat-icon *ngIf="!isExpanded">chevron_right</mat-icon>
+        </button>
+      </div>
+
+      <mat-accordion multi="false">
+        <ng-container *ngFor="let item of myWorkRoutes">
+          <button mat-raised-button class="white-color" *ngIf="!isExpanded" [matMenuTriggerFor]="condensedMenu" style="height: 75px;"
+                            matTooltip="{{ item.title }}"
+                            [matTooltipPosition]="'after'">
+              <mat-icon svgIcon="{{item.icon}}"></mat-icon>
+            </button>
+            <mat-menu #condensedMenu="matMenu" [overlapTrigger]="true" class='indent-popup'>
+              <ng-template matMenuContent>
+                <button mat-menu-item *ngFor="let subItem of item.subRoutes" class="white-color"
+                        routerLinkActive
+                        #routerLinkActiveInstance="routerLinkActive"
+                        [class.list-item-active]="routerLinkActiveInstance.isActive"
+                        [routerLink]="[subItem.route]"
+                        (click)="selectMenuItem(subItem.route) ">
+                  <mat-icon matListIcon svgIcon="{{subItem.icon}}"></mat-icon>
+                  {{subItem.title}}
+                </button>
+              </ng-template>
+            </mat-menu>
+            <mat-expansion-panel mat-list-item class="expansion-panels" *ngIf="isExpanded" hideToggle="true" #expansion>
+              <mat-expansion-panel-header class="expansion-headers" [collapsedHeight]="'75px'" [expandedHeight]="'75px'">
+                <mat-icon matListIcon svgIcon="{{item.icon}}"></mat-icon>
+                <div matLine class="shift-right" *ngIf="isExpanded">
+                  {{ item.title }}
+                </div>
+                <mat-icon class="customChevron" *ngIf="expansion.expanded" style="transform: rotate(90deg);"> chevron_right </mat-icon>
+                <mat-icon class="customChevron" *ngIf="!expansion.expanded"> chevron_right </mat-icon>
+              </mat-expansion-panel-header>
+              <mat-list style="margin-left:20px; padding-top:0px;" dense *ngFor="let subItem of item.subRoutes">
+                <mat-list-item routerLinkActive
+                               #routerLinkActiveInstance="routerLinkActive"
+                               [class.list-item-active]="routerLinkActiveInstance.isActive"
+                               [routerLink]="[subItem.route]"
+                               (click)="stop($event)">
+                  <mat-icon matListIcon svgIcon="{{subItem.icon}}"></mat-icon>
+                  <div matLine>
+                    {{ subItem.title }}
+                  </div>
+                </mat-list-item>
+              </mat-list>
+
+            </mat-expansion-panel>
+
+        </ng-container>
+      </mat-accordion>
+
+      </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- replace with router-outlet -->
+    <lib-my-lib></lib-my-lib>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

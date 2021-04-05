@@ -12,11 +12,9 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "my-lib": [
-        "./projects/my-lib/src/public-api"
-      ]
+      "@angular/*": ["./node_modules/@angular/*"],
+      "my-lib": ["../../my-lib/src/public-api"]
     },
-    "noImplicitAny": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
@@ -25,7 +23,8 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "noImplicitAny": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
